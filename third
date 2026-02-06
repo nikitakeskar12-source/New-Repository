@@ -1,0 +1,48 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+// Structure to store movie information
+struct Movie {
+    string name;
+    string genre;
+};
+
+int main() {
+    // List of movies
+    vector<Movie> movies = {
+        {"Avengers", "Action"},
+        {"John Wick", "Action"},
+        {"Titanic", "Romance"},
+        {"The Notebook", "Romance"},
+        {"Inception", "Sci-Fi"},
+        {"Interstellar", "Sci-Fi"},
+        {"The Hangover", "Comedy"},
+        {"Friends", "Comedy"}
+    };
+
+    string userGenre;
+
+    cout << "Welcome to Movie Recommendation System.\n";
+    cout << "Available genres: Action, Romance, Sci-Fi, Comedy\n";
+    cout << "Enter your favorite genre: ";
+    cin >> userGenre;
+
+    cout << "\nRecommended movies for you:\n";
+
+    bool found = false;
+    for (int i = 0; i < movies.size(); i++) {
+        if (movies[i].genre == userGenre) {
+            cout << "- " << movies[i].name << endl;
+            found = true;
+        }
+    }
+
+    if (!found) {
+        cout << "Sorry, no movies found for this genre.\n";
+    }
+
+    return 0;
+}
