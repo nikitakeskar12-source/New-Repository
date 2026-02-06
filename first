@@ -1,0 +1,43 @@
+// CHATBOT WITH RULE-BASED RESPONSES
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string userInput;
+
+    cout << "Chatbot: Hello! I am a simple chatbot." << endl;
+    cout << "Chatbot: Type 'bye' to exit.\n" << endl;
+
+    while (true) 
+    {
+        cout << "You: ";
+        getline(cin, userInput);
+
+       
+        if (userInput == "hi" || userInput == "hello") {
+            cout << "Chatbot: Hello! Nice to meet you." << endl;
+        }
+        else if (userInput == "how are you") {
+            cout << "Chatbot: I am doing well. Thank you!" << endl;
+        }
+        else if (userInput == "what is your name") {
+            cout << "Chatbot: I am a rule-based chatbot created in C++." << endl;
+        }
+        else if (userInput == "what can you do") {
+            cout << "Chatbot: I reply based on predefined rules." << endl;
+        }
+        else if (userInput == "bye") {
+            cout << "Chatbot: Goodbye! Have a great day." << endl;
+            break;
+        }
+        else {
+            cout << "Chatbot: Sorry, I don't understand that." << endl;
+        }
+    }
+
+    return 0;
+}
